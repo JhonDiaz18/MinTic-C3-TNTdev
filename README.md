@@ -5,3 +5,4 @@ Planteamiento del Problema: analizar, diseñar y construir una aplicación softw
 
 Integrantes:
 Marcos Danilo Esteban Torres Lopez
+Jhon Alejandro Diaz Gonzalez

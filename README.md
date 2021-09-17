@@ -8,3 +8,4 @@ Integrantes:
 - Jhon Alejandro Diaz Gonzalez
 - Juan Sebastian Soto Martinez
 - Laura Lamprea Merchán
+- Carolina Lapeira Padilla

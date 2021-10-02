@@ -1,0 +1,46 @@
+body {
+  background-color: lightblue;
+}
+h1{
+  text-align: center;
+}
+  table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 200px;
+
+  }
+  th, td {
+
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid rgb(57, 30, 209);
+  }
+  tr:hover {background-color: #D6EEEE;}
+  
+.button {
+  background-color: #008CBA;
+  border-radius: 12px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+center {position: relative;
+  margin: 20px auto;
+  width: 920px;
+  height: 60px;
+  text-align: center;
+  line-height: 12px;
+  background-color:rgb(114, 162, 251) ;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  
+}

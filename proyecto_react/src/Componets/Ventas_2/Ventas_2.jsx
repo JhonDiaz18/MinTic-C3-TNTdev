@@ -2,12 +2,22 @@ import './Ventas_2.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
+import Header from '../Encabezado/Header';
 
 const Ventas_2 = () => {
+    //Funciones
+    
+
+    //
     return (
+        //Codigo HTML
         <>
-            <h1>Pagina Ventas_2</h1>
-            <Table striped bordered hover>
+            <Header />
+            <div className = "divtable">
+            <h1 className = "Titulo2"> Listado de Ventas </h1>
+            <br />
+            <center>
+            <Table striped bordered hover className = "tablaventas"> 
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -49,7 +59,10 @@ const Ventas_2 = () => {
                     </tr>
                 </tbody>
             </Table>
+            </center>
+            </div>
         </>
+        //
     );
 }
 

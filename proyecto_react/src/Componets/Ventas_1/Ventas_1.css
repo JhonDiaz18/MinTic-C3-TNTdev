@@ -1,16 +1,5 @@
 /* Estilos Ventas_1*/
 
-body {
-    font-family: Lato,sans-serif;
-    font-size: 16px;
-    line-height: 1.5625;
-    color: #5d6879;
-    background-color: #fff;
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 50px;
-  }
-  
   #cuerpo {
     margin-left: auto;
     margin-right: auto;
@@ -26,7 +15,14 @@ body {
     grid-gap: 5px;
   }
   
-  table button {
+  .tableVentas1 {
+    width: 22px;
+    padding: 2px;
+    border-color: #F2C94C;
+    border-radius: 40px;
+  }
+
+  .buttonVentas1{
     width: 22px;
     padding: 2px;
     border-color: #F2C94C;

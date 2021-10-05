@@ -1,34 +1,5 @@
 /* Estilos USUARIOS*/
-
-body {
-    font-family: Lato,sans-serif;
-    font-size: 16px;
-    line-height: 1.5625;
-    color: #5d6879;
-    background-color: #fff;
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 50px;
-    margin: 0; 
-  }
-  
-
-  
-  h2{
-    text-align: center;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 25px;
-  letter-spacing: 2px;
-  word-spacing: 2px;
-  color: #3498db;
-  font-weight: 700;
-  text-decoration: overline solid rgb(68, 68, 68);
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-    
-  }
-  
+ 
 .tableUsuarios {
     border-collapse: collapse;
       width: 70%;
@@ -36,7 +7,7 @@ body {
       margin-left: 200px;
   }
   
-  td, th {
+td, th {
     padding: 8px;
       text-align: center;
       border-bottom: 1px solid rgb(201, 196, 224);

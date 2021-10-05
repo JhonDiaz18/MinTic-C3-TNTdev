@@ -11,9 +11,10 @@ const Productos_2 = () => {
         //Codigo HTML
         <>
             <Header />
-            <table>
-                <caption><h2>Listado de productos</h2></caption>
-
+            <br />
+            <br />
+            <h2>Listado de productos</h2>
+            <table className = "tableProductos2">
                 <tr>
                     <th>ID</th>
                     <th>Descripción</th>

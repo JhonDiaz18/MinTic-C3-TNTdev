@@ -29,7 +29,7 @@ const Ventas_1 = () => {
                     <input type="text" name="ID de Venta" id="idventa" />
                 </div>
                 <hr />
-                <table>
+                <table className = "tableVentas1">
                     <tr>
                         <th>ID de Producto</th>
                         <th>Descripcion</th>
@@ -43,8 +43,8 @@ const Ventas_1 = () => {
                         <td><input type="text" name="Cantidad" id="cantidad"></input></td>
                         <td><input type="text" name="Precio Unitario" id="unitvalue" readonly></input></td>
                         <td><input type="text" name="Precio Total" id="totalprice" readonly></input></td>
-                        <td><button>+</button></td>
-                        <td><button>-</button></td>
+                        <td><button className = "buttonVentas1">+</button></td>
+                        <td><button className = "buttonVentas1">-</button></td>
                     </tr>
                 </table>
                 <div id="pie">
@@ -58,7 +58,7 @@ const Ventas_1 = () => {
                     <td><input type="text" name="Precio Total venta" id="vtotalprice" readonly></input></td>
                 </div>
                 <hr />
-                <button id="guardar">Guardar</button>
+                <center><button id="guardar">Guardar</button></center>
             </div></>
 
         //

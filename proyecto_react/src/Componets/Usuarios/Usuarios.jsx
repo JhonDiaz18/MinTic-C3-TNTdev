@@ -1,5 +1,6 @@
 import './Usuarios.css';
 import React from 'react';
+import Header from '../Encabezado/Header';
 
 const Usuarios = () => {
     //Funciones
@@ -8,8 +9,8 @@ const Usuarios = () => {
     //    
     return (
         //Codigo HTML
-
-        <h1>Pagina Usuarios</h1>
+        <Header />
+        
 
         //
     );

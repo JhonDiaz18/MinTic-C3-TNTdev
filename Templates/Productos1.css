@@ -1,12 +1,11 @@
-body {
+/* body {
   font-family: 'Century Gothic', cursive;
   background: #F2994A;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
+ 
   background: -webkit-gradient(linear, left top, right top, from(#F2C94C), to(#F2994A));
   background: linear-gradient(to right, #F2C94C, #F2994A);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+  
+} */
 
 main #encabezado {
   padding: 10px;
@@ -40,8 +39,10 @@ main #cuerpo {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #deee99;
+  /*background-color: #ee9999;*/
   border-radius: 5px;
+    border: 2px solid #3ab7ff;
+  
 }
 
 main #cuerpo #imenu {

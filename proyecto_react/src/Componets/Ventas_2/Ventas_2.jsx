@@ -3,10 +3,19 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
 import Header from '../Encabezado/Header';
+import Pagination from 'react-bootstrap/Pagination'
 
 const Ventas_2 = () => {
     //Funciones
-    
+    let active = 1;
+    let items = [];
+    for (let number = 1; number <= 5; number++) {
+        items.push(
+            <Pagination.Item key={number} active={number === active}>
+                {number}
+            </Pagination.Item>,
+        );
+    }
 
     //
     return (
@@ -65,6 +74,10 @@ const Ventas_2 = () => {
             </Table>
             </center>
             </div>
+            <div>
+                <center><Pagination>{items}</Pagination></center>
+            </div>
+            
         </>
         //
     );

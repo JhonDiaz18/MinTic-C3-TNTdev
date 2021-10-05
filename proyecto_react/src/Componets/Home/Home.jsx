@@ -1,7 +1,6 @@
 import './Home.css';
 import React from 'react';
 import Logo from "./logo.png";
-import Google from "./logo_google.png";
 
 const Home = () => {
     //Funciones

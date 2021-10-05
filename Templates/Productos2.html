@@ -10,21 +10,114 @@
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <a class="neon">TNTdevs</a>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="" >Inicio</a></li>
-                    <li><a href="">Acerca</a></li>
-                    <li><a href="">Productos</a></li>
-                    <li><a href="">Ventas</a></li>
+            <a  href="" class="neon">TNTdevs</a>
+            <!-- <nav class="navigation"> -->
+                <ul class="desplegable">
+                    <li><a href="">Productos</a>
+                        <ul class="des2">
+                            <li><a href="">Registros</a></li>
+                            <li><a href="">Listado</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="">Ventas</a>
+                        <ul class="des2">
+                            <li><a href="">Registros</a></li>
+                            <li><a href="">Listado</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="">Usuarios</a></li>
                     <li class="logOut"><a href="">Log Out</a></li>
                 </ul>
              
-            </nav>
+            <!-- </nav> -->
         </div> 
     </header> 
 
-    <!--INSERTAR LA TABLA DE USUARIOS.HTML Y AGREGAR BOTONES DE REGISTRO Y LISTADO-->
+    
+
+    <table>
+        <caption><h2>Listado de productos</h2></caption> 
+        
+        <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Precio Unitario</th>
+        <th>Estado</th>
+        <th>Acción</th>
+        </tr>
+
+        <tr>
+        <td><input type="text" placeholder="ID product"></td>
+        <td><input type="text" placeholder="Description"></td>
+        <td><input type="text" placeholder="$0.000"></td>
+        <td>
+            <select name="menu">
+            <option>---</option>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+            </select>
+        </td>
+        <td><button class=buttonEditar>Edit</button><button class=buttonEliminar>Delete</button></td>
+        </tr>
+        <tr>
+        <td><input type="text" placeholder="ID product"></td>
+        <td><input type="text" placeholder="Description"></td>
+        <td><input type="text" placeholder="$0.000"></td>
+        <td>
+            <select name="menu">
+            <option>---</option>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+            </select>
+        </td>
+        <td><button class=buttonEditar>Edit</button><button class=buttonEliminar>Delete</button></td>
+        </tr>
+        <tr>
+        <td><input type="text" placeholder="ID product"></td>
+        <td><input type="text" placeholder="Description"></td>
+        <td><input type="text" placeholder="$0.000"></td>
+        <td>
+            <select name="menu">
+            <option>---</option>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+            </select>
+        </td>
+        <td><button class=buttonEditar>Edit</button><button class=buttonEliminar>Delete</button></td>
+        </tr>
+        <tr>
+        <td><input type="text" placeholder="ID product"></td>
+        <td><input type="text" placeholder="Description"></td>
+        <td><input type="text" placeholder="$0.000"></td>
+        <td>
+            <select name="menu">
+            <option>---</option>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+            </select>
+        </td>
+        <td><button class=buttonEditar>Edit</button><button class=buttonEliminar>Delete</button></td>
+        </tr>
+        <tr>
+        <td><input type="text" placeholder="ID product"></td>
+        <td><input type="text" placeholder="Description"></td>
+        <td><input type="text" placeholder="$0.000"></td>
+        <td>
+            <select name="menu">
+            <option>---</option>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+            </select>
+        </td>
+        <td><button class=buttonEditar>Edit</button><button class=buttonEliminar>Delete</button></td>
+        </tr>
+    </table>
+
+        
+        
+            
+    <script src="js/header.js"></script>
 </body>
 </html>

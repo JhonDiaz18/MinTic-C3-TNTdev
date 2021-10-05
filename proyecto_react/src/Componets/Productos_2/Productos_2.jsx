@@ -4,13 +4,10 @@ import React from 'react';
 const Productos_2 = () => {
     //Funciones
 
-
     //    
     return (  
         //Codigo HTML
-
-        <h1>Pagina Productos 2</h1>
-
+        <h1>Hola Mundo</h1>
         //
     );
 }

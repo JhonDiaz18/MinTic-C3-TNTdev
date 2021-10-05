@@ -16,6 +16,10 @@ const Ventas_2 = () => {
             <div className = "divtable">
             <h1 className = "Titulo2"> Listado de Ventas </h1>
             <br />
+            <button>Registo</button>
+            <button>Listado</button>
+            <br />
+            <br />
             <center>
             <Table striped bordered hover className = "tablaventas"> 
                 <thead>

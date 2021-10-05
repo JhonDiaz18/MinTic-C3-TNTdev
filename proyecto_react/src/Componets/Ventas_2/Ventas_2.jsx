@@ -26,7 +26,7 @@ const Ventas_2 = () => {
         <>
             <Header />
             <div className = "divtable">
-            <h1 className = "Titulo2"> Listado de Ventas </h1>
+            <h1 className = "TituloVentas2"> Listado de Ventas </h1>
             <br />
             <div>
             <center>

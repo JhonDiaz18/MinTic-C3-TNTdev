@@ -1,64 +1,71 @@
 import './Productos_2.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table';
 import Header from '../Encabezado/Header';
 
 const Productos_2 = () => {
     //Funciones
 
     //    
-    return (  
+    return (
         //Codigo HTML
         <>
             <Header />
-            <div className = "divtable">
-            <h1 className = "Titulo2"> Listado de Productos </h1>
-            <br />
-            <button>Registo</button>
-            <button>Listado</button>
-            <br />
-            <br />
-            <center>
-            <Table striped bordered hover className = "tablaventas"> 
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Descripción</th>
-                        <th>Precio Unitario</th>
-                        <th>Estado</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2547</td>
-                        <td>Computador Portatil HP</td>
-                        <td>$1'000.000</td>
-                        <td>En progreso</td>
-                        <td>Borrar</td>
-                    </tr>
-                    <tr>
-                        <td>2547</td>
-                        <td>Computador Portatil HP</td>
-                        <td>$1'000.000</td>
-                        <td>En progreso</td>
-                        <td>Borrar</td>
-                    </tr>
-                    <tr>
-                        <td>2547</td>
-                        <td>Computador Portatil HP</td>
-                        <td>$1'000.000</td>
-                        <td>En progreso</td>
-                        <td>Borrar</td>
-                    </tr>
-                </tbody>
-            </Table>
-            </center>
-            </div>
+            <table>
+                <caption><h2>Listado de productos</h2></caption>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Precio Unitario</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+
+                <tr>
+                    <td>ID product</td>
+                    <td>Description</td>
+                    <td>$0.000</td>
+                    <td>Disponible
+                    </td>
+                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>ID product</td>
+                    <td>Description</td>
+                    <td>$0.000</td>
+                    <td>No Disponible
+                    </td>
+                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>ID product</td>
+                    <td>Description</td>
+                    <td>$0.000</td>
+                    <td>Disponible
+                    </td>
+                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>ID product</td>
+                    <td>Description</td>
+                    <td>$0.000</td>
+                    <td>Disponible
+                    </td>
+                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>ID product</td>
+                    <td>Description</td>
+                    <td>$0.000</td>
+                    <td>No Disponible
+                    </td>
+                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
+                </tr>
+            </table>
         </>
         //
     );
 }
- 
+
 export default Productos_2;

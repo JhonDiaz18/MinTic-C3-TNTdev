@@ -1,0 +1,65 @@
+/* Estilos Ventas_1*/
+
+  #cuerpo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  
+  #cabeza {
+    padding: 30px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+  
+  .tableVentas1 {
+    width: 22px;
+    padding: 2px;
+    border-color: #F2C94C;
+    border-radius: 40px;
+  }
+
+  .buttonVentas1{
+    width: 22px;
+    padding: 2px;
+    border-color: #F2C94C;
+    border-radius: 40px;
+  }
+  
+  #pie {
+    padding: 30px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  #pie #vtotalprice {
+    width: 140px;
+    margin-right: 80px;
+    margin-left: auto;
+  }
+  
+  #pie #pt {
+    width: 50px;
+    margin-right: 1px;
+    margin-left: auto;
+  }
+  
+  #pie #estado {
+    width: 140px;
+    margin-right: 400px;
+    margin-left: auto;
+  }
+  
+  #guardar {
+    width: 100px;
+    padding: 5px;
+    border-color: #F2C94C;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: 10px;
+  }

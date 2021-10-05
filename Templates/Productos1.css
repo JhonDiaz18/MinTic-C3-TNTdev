@@ -1,1 +1,90 @@
+/* body {
+  font-family: 'Century Gothic', cursive;
+  background: #F2994A;
+ 
+  background: -webkit-gradient(linear, left top, right top, from(#F2C94C), to(#F2994A));
+  background: linear-gradient(to right, #F2C94C, #F2994A);
+  
+} */
 
+main #encabezado {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr 1fr 4fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr 4fr;
+  grid-gap: 20px;
+}
+
+main #encabezado a {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-decoration: none;
+}
+
+main #encabezado button {
+  font-family: 'Century Gothic', cursive;
+  width: 120px;
+  margin-left: auto;
+  margin-right: 1px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-color: #F2C94C;
+  border-radius: 15px;
+}
+
+main #cuerpo {
+  padding: 10px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color: #ee9999;*/
+  border-radius: 5px;
+    border: 2px solid #3ab7ff;
+  
+}
+
+main #cuerpo #imenu {
+  width: 60px;
+  padding: 2px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+main #cuerpo #imenu a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: #beca52;
+  border-radius: 5px;
+}
+
+main #cuerpo #regProductos {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main #cuerpo #regProductos form {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+main #cuerpo #regProductos button {
+  font-family: 'Century Gothic', cursive;
+  margin-left: 40%;
+  margin-top: 3%;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 1%;
+  background-color: #08a310;
+  color: white;
+}

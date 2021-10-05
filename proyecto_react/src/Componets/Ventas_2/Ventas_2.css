@@ -5,11 +5,19 @@
 }
 
 .divtable{
-    margin: 50px;
+    margin: 30px;
     margin-bottom: auto;
     padding: auto;
 }
 
 .tablaventas {
     width: 80%;
+}
+
+.pagination{
+    margin: auto;
+}
+
+.mb-3{
+    width: 30%;
 }

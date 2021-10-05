@@ -2,8 +2,15 @@ import './Home.css';
 import React from 'react';
 
 const Home = () => {
+    //Funciones
+    
+    //
     return ( 
-        <h1>Pagina Home</h1>
+        //Codigo HTML
+        
+        <h1 className = "Titulo1" >Pagina Home</h1>
+
+        //
     );
 }
  

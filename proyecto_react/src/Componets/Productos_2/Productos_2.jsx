@@ -2,8 +2,13 @@ import './Productos_2.css';
 import React from 'react';
 
 const Productos_2 = () => {
+    //Funciones
+
+    //    
     return (  
-        <h1>Pagina Productos 2</h1>
+        //Codigo HTML
+        <h1>Hola Mundo</h1>
+        //
     );
 }
  

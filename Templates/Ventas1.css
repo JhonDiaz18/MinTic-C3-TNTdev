@@ -1,0 +1,68 @@
+body {
+  font-family: Lato,sans-serif;
+  font-size: 16px;
+  line-height: 1.5625;
+  color: #5d6879;
+  background-color: #fff;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+#cuerpo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+
+#cabeza {
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+table button {
+  width: 22px;
+  padding: 2px;
+  border-color: #F2C94C;
+  border-radius: 40px;
+}
+
+#pie {
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#pie #vtotalprice {
+  width: 140px;
+  margin-right: 80px;
+  margin-left: auto;
+}
+
+#pie #pt {
+  width: 50px;
+  margin-right: 1px;
+  margin-left: auto;
+}
+
+#pie #estado {
+  width: 140px;
+  margin-right: 400px;
+  margin-left: auto;
+}
+
+#guardar {
+  width: 100px;
+  padding: 5px;
+  border-color: #F2C94C;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=ventas1.css.map */

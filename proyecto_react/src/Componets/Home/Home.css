@@ -1,2 +1,68 @@
 /* Estilos HOME*/
 
+.bodyhome {
+    font-family: 'Century Gothic', cursive;
+    background: #333;
+    ;
+}
+
+.encabezado {
+    background: #333;
+    padding: 10px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 10fr 1fr 1fr;
+        grid-template-columns: 10fr 1fr 1fr;
+  }
+
+.h4Home{
+    width: 150px;
+  margin-left: auto;
+  margin-right: 10px;
+  color: white;
+}
+
+.butoomGoogle{
+    width: 90px;
+  margin-left: auto;
+  margin-right: 1px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #f1ffb3;
+  padding: 2px;
+  border-color: #F2C94C;
+  border-radius: 15px;
+  font-family: 'Century Gothic', cursive;
+}
+
+.cuerpoHome {
+    background: #333;
+    padding: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.parrafo{
+    background-color: transparent;
+    color: white;
+    text-align:center
+  }
+  
+  main #neon {
+    letter-spacing: 5px;
+    font-size: 2em;
+      color: #fff;
+    size: 20px;
+      margin-top: 1%;
+      text-shadow:
+          0 0 5px rgba(0,178,255,1),
+          0 0 10px rgba(0,178,255,1),
+          0 0 20px rgba(0,178,255,1),
+          0 0 40px rgba(38,104,127,1),
+          0 0 80px rgba(38,104,127,1),
+          0 0 90px rgba(38,104,127,1),
+          0 0 100px rgba(38,104,127,1),
+          0 0 140px rgba(38,104,127,1),
+          0 0 400px rgba(38,104,127,1);
+  }

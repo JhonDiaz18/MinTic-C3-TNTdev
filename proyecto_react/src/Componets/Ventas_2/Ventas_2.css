@@ -1,0 +1,23 @@
+/* Estilos Ventas_2*/
+
+.TituloVentas2{
+    text-align: center;
+}
+
+.divtable{
+    margin: 30px;
+    margin-bottom: auto;
+    padding: auto;
+}
+
+.tablaventas {
+    width: 80%;
+}
+
+.pagination{
+    margin: auto;
+}
+
+.mb-3{
+    width: 30%;
+}

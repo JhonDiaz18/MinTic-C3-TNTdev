@@ -1,1 +1,74 @@
+body {
+  font-family: 'Century Gothic', cursive;
+  background: #333;
+  ;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: -webkit-gradient(linear, left top, right top, from(#F2C94C), to(#F2994A));
+  /*background: linear-gradient(to right, #F2C94C, #F2994A);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+main #encabezado {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10fr 1fr 1fr;
+      grid-template-columns: 10fr 1fr 1fr;
+}
+
+main #encabezado button {
+  width: 90px;
+  margin-left: auto;
+  margin-right: 1px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #f1ffb3;
+  padding: 2px;
+  border-color: #F2C94C;
+  border-radius: 15px;
+  font-family: 'Century Gothic', cursive;
+}
+
+main #encabezado button a {
+  text-decoration: none;
+}
+
+main #encabezado h4 {
+  width: 150px;
+  margin-left: auto;
+  margin-right: 10px;
+  color: white;
+}
+
+main #cuerpo {
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*# sourceMappingURL=index.css.map */
+
+main #parrafo{
+  background-color: transparent;
+  color: white;
+  text-align:center
+}
+
+main #neon {
+  letter-spacing: 5px;
+  font-size: 2em;
+    color: #fff;
+  size: 20px;
+    margin-top: 1%;
+    text-shadow:
+        0 0 5px rgba(0,178,255,1),
+        0 0 10px rgba(0,178,255,1),
+        0 0 20px rgba(0,178,255,1),
+        0 0 40px rgba(38,104,127,1),
+        0 0 80px rgba(38,104,127,1),
+        0 0 90px rgba(38,104,127,1),
+        0 0 100px rgba(38,104,127,1),
+        0 0 140px rgba(38,104,127,1),
+        0 0 400px rgba(38,104,127,1);
+}

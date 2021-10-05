@@ -1,46 +1,13 @@
-
-body {
-    font-family: Lato,sans-serif;
-    font-size: 16px;
-    line-height: 1.5625;
-    color: #5d6879;
-    background-color: #fff;
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 50px;
-    margin: 0; 
-  }
-  
-  h1{
-    color: #e0dfdc;
-    background: #556677;
-    letter-spacing: .1em;
-    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0,0,0,0.9);
-  }
-  
-  h2{
-    text-align: center;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 25px;
-  letter-spacing: 2px;
-  word-spacing: 2px;
-  color: #3498db;
-  font-weight: 700;
-  text-decoration: overline solid rgb(68, 68, 68);
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-    
-  }
-  
-  table {
+/* Estilos USUARIOS*/
+ 
+.tableUsuarios {
     border-collapse: collapse;
       width: 70%;
       margin-top: 50px;
       margin-left: 200px;
   }
   
-  td, th {
+td, th {
     padding: 8px;
       text-align: center;
       border-bottom: 1px solid rgb(201, 196, 224);
@@ -54,7 +21,7 @@ body {
     text-align: center;
   }
   
-  caption {
+  .capUsuarios {
     padding: 10px;
   }
   
@@ -120,9 +87,4 @@ body {
   .button1:active {
     border-top-color: #1b435e;
     background: #1b435e;
-    }  
-  
-  
-  
-  
-  
+    } 

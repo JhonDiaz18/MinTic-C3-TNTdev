@@ -10,7 +10,7 @@ app.use(express.json());
 /**RUTAS */
 app.use('/api/tnt',require('./routes/tnt'));
 app.use('/api/productos',require('./routes/productos'));
-
+app.use('/api/ventas',require('./routes/ventas'));
 
 /**Escuchar peticiones */
 app.listen(process.env.Port,()=>{  

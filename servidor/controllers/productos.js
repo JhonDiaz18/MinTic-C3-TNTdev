@@ -41,15 +41,18 @@ const crearProducto = async (req, resp = response) => {
 
 const actualizarProducto = async (req, resp = response) => {
     const productoId = req.params.id;
+    //console.log(productoId);
     try {
         const producto = await Producto.findById(productoId); 
+        //console.log(producto);
         if(!producto) {
             resp.status(404).json({
                 ok: false,
                 msg: 'El id del producto no coincide con ningun elemento en la DB',
             });
         }
-        const productoActualizado = await Producto.findByIdAndUpdate(productoId,req.boody,{new:true});
+        const productoActualizado = await Producto.findByIdAndUpdate(productoId,req.body,{new:true});
+        console.log(productoActualizado);
         resp.json({
             ok: true,
             msg: 'Producto actualizado exitosamente!! ',

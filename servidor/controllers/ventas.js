@@ -2,7 +2,7 @@ const {response} =require('express');
 //const {validationResult}=require('express-validator');
 const Venta = require ('../models/Ventas');
 
-
+//Listar Ventas
 const getVentas = async (req, resp = response) => {
     const ventas = await Venta.find().populate('id_sale');
     resp.status(200).json({

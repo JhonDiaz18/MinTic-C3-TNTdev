@@ -1,7 +1,7 @@
 const {Router} =require('express');
 const {check}=require('express-validator');
 const router =Router();
-const {crearUsuario,loginUsuario,revalidarToken}=require('../controllers/tnt')
+const {crearUsuario,loginUsuario,revalidarToken, getUsuarios, setUsuario, actualizarUsuario, eliminarUsuario}=require('../controllers/tnt')
 
 router.post(
     '/new', 
@@ -13,5 +13,10 @@ router.post(
     crearUsuario);
 router.post('/',loginUsuario);
 router.get('/renew',revalidarToken);
+//CRUD
+router.get('/listar', getUsuarios);
+router.post('/crear', setUsuario);
+router.put('/actualizar/:id', actualizarUsuario);
+router.delete('/eliminar/:id', eliminarUsuario);
 
 module.exports=router;

@@ -2,9 +2,9 @@ const {response} =require('express');
 //const {validationResult}=require('express-validator');
 const Venta = require ('../models/Ventas');
 
-//Listar Ventas
+
 const getVentas = async (req, resp = response) => {
-    const ventas = await Venta.find().populate('id_sale');
+    const ventas = await Venta.find().populate('name');
     resp.status(200).json({
         ok: true,
         msg: 'Lista de Ventas',
@@ -41,7 +41,9 @@ const actualizarVenta= async (req, resp = response) => {
                 msg: 'El id de la venta no coincide con ningun elemento en la DB',
             });
         }
-        const ventaActualizada = await Venta.findByIdAndUpdate(ventaId,req.body,{new:true});
+
+    const ventaActualizada = await Venta.findByIdAndUpdate(ventaId,req.boody,{new:true});
+
         resp.json({
             ok: true,
             msg: 'Venta actualizada exitosamente!! ',

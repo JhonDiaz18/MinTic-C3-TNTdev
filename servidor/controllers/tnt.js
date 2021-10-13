@@ -3,7 +3,10 @@ const {validationResult}=require('express-validator');
 const Usuario = require ('../models/Usuarios');
 const bcrypt = require('bcryptjs');
 //const { generarJWT } = require('../helpers/jwt');
+const Perfil = require('../models/Perfil');
+const Usuarios = require('../models/Usuarios');
 
+// Task Model
     
     const crearUsuario = async (req, resp = response) => {
         const { email, password } = req.body;  
@@ -97,10 +100,75 @@ const bcrypt = require('bcryptjs');
             token: token
         });
     
-}
+    }
+    
+    //Listar Usuarios
+
+    const getUsuarios = async (req, resp = response) => {
+    const usuarios = await Usuario.find().populate('perfil');
+
+    resp.status(200).json({
+        ok: true,
+        msg: 'Lista de Usuarios',
+        usuarios
+    })
+    }
+
+    //Crear Usuario
+
+    const setUsuario = async (req, resp = response) => {
+    
+    const usuario = new Usuario(req.body);
+
+    try {
+        
+        const us = await usuario.save();
+
+        resp.status(201).json({
+            ok: true,
+            msg: 'Usuario Creado',
+            usuario: us
+        })
+
+    } catch (error) {
+        console.log(error);
+        resp.status(500).json({
+            ok: false,
+            msg: 'error al crear el usuario',
+        })
+    }
+    
+    resp.json({
+        ok: true,
+        msg: 'Crear Usuario'
+    })
+    }
+
+
+    // Actualizar Usuario
+
+    const actualizarUsuario = (req, resp = response) => {
+        resp.json({
+            ok: true,
+            msg: 'Actualizar Usuario'
+        })
+    }
+
+    //Eliminar Usuario
+
+    const eliminarUsuario = (req, resp = response) => {
+    resp.json({
+        ok: true,
+        msg: 'Eliminar Usuario'
+    })
+    }
 
 module.exports={
     crearUsuario,
     loginUsuario,
-    revalidarToken
+    revalidarToken,
+    getUsuarios,
+    setUsuario,
+    actualizarUsuario,
+    eliminarUsuario
 };

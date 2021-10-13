@@ -14,6 +14,7 @@ router.post(
         check('client', 'El nombre del cliente es obligatorio').not().isEmpty(),
         check('id_client', 'El id del cliente es obligatorio').not().isEmpty(),
         check('id_sale', 'El id de la venta es obligatorio').not().isEmpty(),
+        check('date', 'La fecha de la venta es obligatorio').not().isEmpty(),
         check('state_sale', 'El estado de la venta es obligatorio').not().isEmpty(),
         validarCampos
     ],
@@ -24,6 +25,8 @@ router.put(
     [
         check('client', 'El nombre del cliente es obligatorio').not().isEmpty(),
         check('id_client', 'El id del cliente es obligatorio').not().isEmpty(),
+        check('id_sale', 'El id de la venta no se debe editar').isEmpty(),
+        check('date', 'La fecha de la venta es obligatorio').not().isEmpty(),
         check('id_sale', 'El id de la venta es obligatorio').not().isEmpty(),
         check('state_sale', 'El estado de la venta es obligatorio').not().isEmpty(),
         validarCampos

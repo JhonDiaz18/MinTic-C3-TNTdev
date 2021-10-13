@@ -41,7 +41,9 @@ const actualizarVenta= async (req, resp = response) => {
                 msg: 'El id de la venta no coincide con ningun elemento en la DB',
             });
         }
-        const ventaActualizada = await Venta.findByIdAndUpdate(ventaId,req.boody,{new:true});
+
+    const ventaActualizada = await Venta.findByIdAndUpdate(ventaId,req.boody,{new:true});
+
         resp.json({
             ok: true,
             msg: 'Venta actualizada exitosamente!! ',

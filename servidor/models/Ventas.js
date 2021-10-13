@@ -14,6 +14,10 @@ const VentaSchema = Schema({
         required: true,
         unique: true
     },
+    date: {
+        type: String,
+        required: true,
+    },
     state_sale: {
         type: String,
         required: true,

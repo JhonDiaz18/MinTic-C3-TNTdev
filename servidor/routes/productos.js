@@ -24,7 +24,6 @@ router.put(
     [
         check('name', 'El nombre del producto es obligatorio').not().isEmpty(),
         check('id_product', 'El id del producto no se debe editar').isEmpty(),
-        check('id_product', 'El id del producto es obligatorio').not().isEmpty(),
         check('value_product', 'El valor unitario del producto es obligatorio').not().isEmpty(),
         check('state_product', 'El estado del producto es obligatorio').not().isEmpty(),
         validarCampos

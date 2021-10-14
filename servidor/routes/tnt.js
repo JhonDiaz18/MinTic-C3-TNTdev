@@ -13,6 +13,7 @@ router.post(
     crearUsuario);
 router.post('/',loginUsuario);
 router.get('/renew',revalidarToken);
+router.post('/google/login', validarGoogleAuth, validarUsuarioGoogle)
 //CRUD
 router.get('/listar', getUsuarios);
 router.post('/crear', setUsuario);

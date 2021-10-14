@@ -2,15 +2,24 @@ const {response} =require('express');
 //const {validationResult}=require('express-validator');
 const Venta = require ('../models/Ventas');
 
-
 const getVentas = async (req, resp = response) => {
-    const ventas = await Venta.find().populate('name');
-    resp.status(200).json({
-        ok: true,
-        msg: 'Lista de Ventas',
-        ventas
-    });
+    let id_venta = req.query;
+    try {
+        let itemV = await Venta.find(id_venta);   
+        resp.status(200).json({
+            ok: true,
+            msg: 'El ID corresponde a la venta:',
+            itemV
+        });
+    } catch (error) {
+        console.log(error)
+        resp.status(404).json({
+        ok: false,
+        msg: 'No esta la venta',
+        });
+    }
 }
+
 
 
 const crearVenta = async (req, resp = response) => {

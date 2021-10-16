@@ -2,17 +2,6 @@ const {response} =require('express');
 //const {validationResult}=require('express-validator');
 const Producto = require ('../models/Producto');
 
-/**getProductos */
-
-// const getProductos = async (req, resp = response) => {
-//     let id_producto = req.query;
-//     let item = await Producto.find(id_producto);  
-//     resp.status(200).json({
-//         ok: true,
-//         msg: 'El ID corresponde al producto:',
-//         item
-//     });
-// }
 
 const getProductos = async (req, resp = response) => {
     let id_producto = req.query;

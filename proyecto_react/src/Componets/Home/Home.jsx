@@ -7,35 +7,37 @@ import axios from 'axios';
 
 const Home = () => {
     //Funciones
+    //** async es para trabajar con promesas, transforma la función en promesa */
     const responseGoogle = async (resp) => {
         console.log(resp);
-
-        let response = await axios({
+        try {
+          //** Debido al async se utiliza el await, el await es para que la ejecución de una
+          // promesa se ejecute de forma asincrona */
+          const { data } = await axios({
             method: 'POST',
-            url: `${process.env.React_App_API_Url}/auth/google/login`,
+            url: 'http://localhost:4000/api/auth/google/login',
             headers: {
-                'Autorization': `Bearer ${resp.tokenID}`
+              'Authorization': `Bearer ${resp.tokenId}`
             }
-        })
-
-        console.log(response.data);
-
-            // .then((resp) => {
-            //     console.log(resp);
-            // })
-            // .catch(console.log);
+          });
+          console.log(data);
+  
+        } catch (error) {
+          console.log(error.toJSON());
+          console.log(error.response.data);
+        }
     }
-    //
     return (
         //Codigo HTML
         <>
-        <GoogleLogin
-                        clientId="737691121751-1ukdm2td5rrivg53cblsg893ppk6vcfl.apps.googleusercontent.com"
-                        buttonText="Iniciar sesión con Google"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
+            <GoogleLogin
+                clientId='737691121751-1ukdm2td5rrivg53cblsg893ppk6vcfl.apps.googleusercontent.com'
+                buttonText="Iniciar Sesión"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            />
+    
             {/* <body className="bodyhome">
                 <main>
                     <div className="encabezado">

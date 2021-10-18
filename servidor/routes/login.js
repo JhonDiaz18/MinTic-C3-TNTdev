@@ -1,7 +1,8 @@
 const {Router} =require('express');
 const {check}=require('express-validator');
 const router =Router();
-const {crearUsuario,loginUsuario,revalidarToken }=require('../controllers/Login')
+const {crearUsuario,loginUsuario,revalidarToken, googleLogin }=require('../controllers/Login');
+const { validarGoogle } = require('../middleware/validar-google');
 
 router.post(
     '/new', 
@@ -13,6 +14,6 @@ router.post(
     crearUsuario);
 router.post('/',loginUsuario);
 router.get('/renew',revalidarToken);
-// router.post('/google/login', validarGoogleAuth, validarUsuarioGoogle)
+router.post('/google/login', validarGoogle, googleLogin);
 
 module.exports=router;

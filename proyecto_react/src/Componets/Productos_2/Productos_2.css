@@ -4,7 +4,7 @@ body {
   font-family: Lato,sans-serif;
   font-size: 16px;
   line-height: 1.5625;
-  color: #5d6879;
+  color: white;
   background-color: #fff;
   min-height: 100%;
   position: relative;
@@ -18,9 +18,9 @@ h2{
 font-size: 25px;
 letter-spacing: 2px;
 word-spacing: 2px;
-color: #3498db;
+color: lightblue;
 font-weight: 700;
-text-decoration: overline solid rgb(68, 68, 68);
+
 font-style: normal;
 font-variant: normal;
 text-transform: none;
@@ -38,11 +38,12 @@ text-transform: none;
 td, th {
   padding: 8px;
     text-align: center;
-    border-bottom: 1px solid rgb(201, 196, 224);
+    border-bottom: 1px solid lightblue;
 }
 
 th {
   background-color: transparent;
+  color: rgb(128, 212, 240);
 }
 
 td {
@@ -127,6 +128,7 @@ background: -moz-linear-gradient(top, #229c5b, #6ac98f);
 background: -ms-linear-gradient(top, #229c5b, #6ac98f);
 background: -o-linear-gradient(top, #229c5b, #6ac98f);
 padding: 4px 8px;
+margin-right: 3px;
 
 -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
 -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;

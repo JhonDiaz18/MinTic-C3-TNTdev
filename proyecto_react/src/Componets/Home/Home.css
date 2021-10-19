@@ -1,28 +1,63 @@
 /* Estilos HOME*/
 
-.bodyhome {
+body{
     font-family: 'Century Gothic', cursive;
-    background: #333;
-    ;
+    background-image: url(fondo.jpg);
+    background-repeat: no-repeat;
+    margin: 0;
+    position: absolute;
+  
 }
 
-.encabezado {
+h3{
+  position: relative;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  color: rgb(255, 255, 255);
+  border-color: white;
+  padding: 20px;
+  line-height: 105%;
+  font-family: 'Century Gothic' ;
+  
+}
+
+h1{
+  letter-spacing: 5px;
+  font-size: 50px;
+    color: #fff;
+  margin-top: 20px;
+    
+    text-shadow:
+        0 0 5px rgba(0,178,255,1),
+        0 0 10px rgba(0,178,255,1),
+        0 0 20px rgba(0,178,255,1),
+        0 0 40px rgba(38,104,127,1),
+        0 0 80px rgba(38,104,127,1),
+        0 0 90px rgba(38,104,127,1),
+        0 0 100px rgba(38,104,127,1),
+        0 0 140px rgba(38,104,127,1),
+        0 0 400px rgba(38,104,127,1);
+}
+
+
+/* .encabezado {
     background: #333;
     padding: 10px;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 10fr 1fr 1fr;
         grid-template-columns: 10fr 1fr 1fr;
-  }
+  } */
 
-.h4Home{
+/* .h4Home{
     width: 150px;
   margin-left: auto;
   margin-right: 10px;
   color: white;
-}
+} */
 
-.butoomGoogle{
+/* .butoomGoogle{
     width: 90px;
   margin-left: auto;
   margin-right: 1px;
@@ -34,35 +69,12 @@
   border-color: #F2C94C;
   border-radius: 15px;
   font-family: 'Century Gothic', cursive;
-}
+} */
 
-.cuerpoHome {
+/* .cuerpoHome {
     background: #333;
     padding: 220px;
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
 
-.parrafo{
-    background-color: transparent;
-    color: white;
-    text-align:center
-  }
-  
-  main #neon {
-    letter-spacing: 5px;
-    font-size: 2em;
-      color: #fff;
-    size: 20px;
-      margin-top: 1%;
-      text-shadow:
-          0 0 5px rgba(0,178,255,1),
-          0 0 10px rgba(0,178,255,1),
-          0 0 20px rgba(0,178,255,1),
-          0 0 40px rgba(38,104,127,1),
-          0 0 80px rgba(38,104,127,1),
-          0 0 90px rgba(38,104,127,1),
-          0 0 100px rgba(38,104,127,1),
-          0 0 140px rgba(38,104,127,1),
-          0 0 400px rgba(38,104,127,1);
-  }

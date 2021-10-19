@@ -23,7 +23,7 @@ const Header = () => {
                         </li>
 
                         <li><a href="../Usuarios">Usuarios</a></li>
-                        <li className ="logOut"><a href="../Home">Log Out</a></li>
+                        <button className ="logOut"><a href="../Home">Log Out</a></button>
                     </ul>
                     </nav>
             </div>

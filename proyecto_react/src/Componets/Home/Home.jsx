@@ -30,7 +30,7 @@ const Home = () => {
     return (
         //Codigo HTML
         <>
-            <body >
+            <body > 
            
                 <center>
                     <h1 >Bienvenidos a TNTdevs</h1>

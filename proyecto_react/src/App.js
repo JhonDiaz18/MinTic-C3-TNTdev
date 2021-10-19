@@ -9,9 +9,10 @@ import Usuarios from './Componets/Usuarios/Usuarios';
 import Ventas_2 from './Componets/Ventas_2/Ventas_2';
 
 function App() {
+
   return (
     <>
-      <Router>
+    <Router>
         <Switch>
           <Route exact path='/Home' component={Home} />
           <Route exact path='/Productos_1' component={Productos_1} />
@@ -20,9 +21,9 @@ function App() {
           <Route exact path='/Ventas_1' component={Ventas_1} />
           <Route exact path='/Ventas_2' component={Ventas_2} />
         </Switch>
-      </Router>
+    </Router>
     </>
-  );
+  ) 
 }
 
 export default App;

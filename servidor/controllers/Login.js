@@ -100,8 +100,16 @@ const revalidarToken = async (req, resp = response) => {
 
 }
 
+const googleLogin = async (req, resp = response) => {
+    resp.json({
+        ok: true,
+        msg: "Google login exitoso"
+    });
+}
+
 module.exports = {
     crearUsuario,
     loginUsuario,
-    revalidarToken
+    revalidarToken,
+    googleLogin
 };

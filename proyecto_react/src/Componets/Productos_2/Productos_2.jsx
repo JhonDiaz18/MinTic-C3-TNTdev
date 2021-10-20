@@ -2,6 +2,10 @@ import './Productos_2.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Encabezado/Header';
+//import Pagination from 'react-bootstrap/Pagination'
+//import Button from 'react-bootstrap/Button';
+import FormControl from 'react-bootstrap/FormControl'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 const Productos_2 = () => {
     //Funciones
@@ -12,8 +16,23 @@ const Productos_2 = () => {
         <>
             <Header />
             <br />
-            <br />
+           
             <h2>Listado de productos</h2>
+            <br />
+            <div>
+            <center>
+            <InputGroup className="mb-3">
+                <FormControl
+                placeholder="Escriba el ID a buscar"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                />
+                <InputGroup.Text id="basic-addon2">Buscar</InputGroup.Text>
+            </InputGroup>
+            </center>
+            </div>
+            
+            
             <table className = "tableProductos2">
                 <tr>
                     <th>ID</th>

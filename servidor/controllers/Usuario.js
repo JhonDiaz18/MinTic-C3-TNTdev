@@ -4,7 +4,7 @@ const Usuario = require('../models/Usuario');
 //Listar Usuarios
 
 const getUsuarios = async (req, resp = response) => {
-    const usuarios = await Usuario.find().populate('perfil');
+    const usuarios = await Usuario.find().populate('rol');
 
     resp.status(200).json({
         ok: true,

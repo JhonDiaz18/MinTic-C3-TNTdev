@@ -2,16 +2,20 @@
 
 .TituloVentas2{
     text-align: center;
+    
 }
 
 .divtable{
     margin: 30px;
     margin-bottom: auto;
     padding: auto;
+    
+    
 }
 
 .tablaventas {
     width: 80%;
+    color: white;
 }
 
 .pagination{
@@ -20,4 +24,5 @@
 
 .mb-3{
     width: 30%;
+    
 }

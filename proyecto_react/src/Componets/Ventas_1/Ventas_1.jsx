@@ -58,7 +58,7 @@ const Ventas_1 = () => {
                     <td><input type="text" name="Precio Total venta" id="vtotalprice" readonly></input></td>
                 </div>
                 <hr />
-                <center><button id="guardar">Guardar</button></center>
+                <center><button className="buttonRegistrar">Guardar</button></center>
             </div></>
 
         //

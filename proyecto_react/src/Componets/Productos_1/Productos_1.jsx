@@ -12,7 +12,7 @@ const Productos_1 = () => {
 
         <main>
             <Header />
-            <hr />
+            
 
             <div id="cuerpo">
                 <div id="regProductos">
@@ -35,7 +35,8 @@ const Productos_1 = () => {
                             <option value="0">No disponible</option>
                         </select>
                     </form>
-                    <button id="registrar">Registrar</button>
+                    <center><button className="buttonRegistrar">Registrar</button></center>
+                    
                 </div>
             </div>
         </main>

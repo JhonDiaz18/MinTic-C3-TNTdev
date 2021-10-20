@@ -6,8 +6,9 @@ main #cuerpo {
     margin-left: auto;
     margin-right: auto;
     /*background-color: #ee9999;*/
+    /* margin-top: 5px;
     border-radius: 5px;
-      border: 2px solid #3ab7ff;
+      border: 2px solid lightblue; */
     
   }
   
@@ -33,9 +34,12 @@ main #cuerpo {
     width: 350px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
   }
   
   main #cuerpo #regProductos form {
+    margin-top: 50px;
+    color: white;
     padding: 10px;
     display: -ms-grid;
     display: grid;
@@ -43,7 +47,7 @@ main #cuerpo {
         grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
   }
-  
+/*   
   main #cuerpo #regProductos button {
     font-family: 'Century Gothic', cursive;
     margin-left: 40%;
@@ -54,4 +58,35 @@ main #cuerpo {
     background-color: #08a310;
     color: white;
   }
+   */
   
+.buttonRegistrar {
+  border-top: 1px solid #e8ebed;
+  background: #51aa73;
+  background: -webkit-gradient(linear, left top, left bottom, from(#229c5b), to(#6ac98f));
+  background: -webkit-linear-gradient(top, #229c5b, #6ac98f);
+  background: -moz-linear-gradient(top, #229c5b, #6ac98f);
+  background: -ms-linear-gradient(top, #229c5b, #6ac98f);
+  background: -o-linear-gradient(top, #229c5b, #6ac98f);
+  margin-top: 10px;
+  padding: 4px 8px;
+  
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+  .buttonRegistrar:hover {
+  border-top-color: #45e33f;
+  background: #45e33f;
+  color: #fcfffe;
+  }
+  .buttonRegistrar:active {
+  border-top-color: #1b435e;
+  background: #1b435e;
+  }

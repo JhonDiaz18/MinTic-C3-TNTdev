@@ -14,15 +14,15 @@ const ListarUsuarios = () => {
     //CONSTANTES
     const constants = {
         'pathApi': 'http://localhost:4000/api',
-        'listarProductos': '/usuarios/listar'
+        'listarUsuarios': '/usuarios/listar'
     }
     //SERVICE
-    const listarProductos = () => {
+    const listarUsuarios = () => {
 
         try {
             return axios({
                 method: 'GET',
-                url: `${process.env.React_App_API_Url}${constants.listarProductos}`,
+                url: `${process.env.React_App_API_Url}${constants.listarUsuarios}`,
                 // headers: {
                 //     'Authorization': `Bearer ${token}`
                 // }
@@ -34,13 +34,13 @@ const ListarUsuarios = () => {
 
 
 
-    const [productos, setProductos] = useState([])
+    const [usuarios, setUsuarios] = useState([])
 
-    const getProductos = async () => {
+    const getUsuarios = async () => {
         try {
-            const { data } = await listarProductos();
-            setProductos(data.usuarios);
-            console.log(productos)
+            const { data } = await listarUsuarios();
+            setUsuarios(data.usuarios);
+            //console.log(productos)
 
         } catch ({ response: error }) {
 
@@ -53,13 +53,11 @@ const ListarUsuarios = () => {
             // } else {
             //     notie.alert({ text: error.data.msg, type: 'error', time: 3 });
             // }
-
-
         }
     }
 
     useEffect(() => {
-        getProductos();
+        getUsuarios();
     }, []);
 
 
@@ -86,13 +84,13 @@ const ListarUsuarios = () => {
 
                 <tbody>
                     {
-                        productos.map((producto, index) => (
-                            <tr key={producto._id}>
+                        usuarios.map((usuarios, index) => (
+                            <tr key={usuarios._id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{producto.name}</td>
-                                <td>{producto.email}</td>
-                                <td>{producto.rol.name}</td>
-                                <td><button className="button1" onClick={getProductos} >Actualizar</button></td>
+                                <td>{usuarios.name}</td>
+                                <td>{usuarios.email}</td>
+                                <td>{usuarios.rol.name}</td>
+                                <td><button className="button1" onClick={getUsuarios} >Actualizar</button></td>
                             </tr>
                         ))
                     }

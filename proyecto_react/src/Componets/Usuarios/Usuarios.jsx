@@ -1,6 +1,5 @@
 import './Usuarios.css';
 import React, { useEffect, useState } from 'react';
-//import React, { useEffect } from 'react';
 import Header from '../Encabezado/Header';
 import axios from 'axios';
 import notie from 'notie';
@@ -32,8 +31,6 @@ const ListarUsuarios = () => {
         }
     }
 
-
-
     const [usuarios, setUsuarios] = useState([])
 
     const getUsuarios = async () => {
@@ -54,6 +51,34 @@ const ListarUsuarios = () => {
             //     notie.alert({ text: error.data.msg, type: 'error', time: 3 });
             // }
         }
+    }
+    
+
+    const cambioRol = async () => {
+        notie.select({
+            text: 'Seleccione el nuevo Rol a actualizar:',
+            cancelText: 'Close',
+            cancelCallback: function () {
+                notie.alert({ type: 5, text: 'Cancel!' })
+            },
+            choices: [
+                {
+                    type: 2,
+                    text: '1. Administrador',
+                    handler: function () {
+                        notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
+                        //
+                    }
+                },
+                {
+                    type: 2,
+                    text: '2. Vendedor',
+                    handler: function () {
+                        notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
+                    }
+                },
+            ]
+        })
     }
 
     useEffect(() => {
@@ -90,15 +115,13 @@ const ListarUsuarios = () => {
                                 <td>{usuarios.name}</td>
                                 <td>{usuarios.email}</td>
                                 <td>{usuarios.rol.name}</td>
-                                <td><button className="button1" onClick={getUsuarios} >Actualizar</button></td>
+                                <td><button className="button1" onClick={cambioRol} >Actualizar</button></td>
                             </tr>
                         ))
                     }
                 </tbody>
-
-            </table></>
-
-        //
+            </table>
+        </>
     );
 }
 

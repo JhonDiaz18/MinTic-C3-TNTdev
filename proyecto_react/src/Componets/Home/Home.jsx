@@ -3,16 +3,16 @@ import React from 'react';
 import GoogleLogin from 'react-google-login';
 import Logo from "./logo.png";
 import axios from 'axios';
-//LAURA
+
 //import { useLocation, useHistory } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import useAuth from '../../hooks/useAuth';
+//import useAuth from '../../hooks/useAuth';
 import notie from 'notie';
 import 'notie/dist/notie.css';
 
 const Home = () => {
     //
-    const auth = useAuth();
+    //const auth = useAuth();
     // //const Location = useLocation();
     const history = useHistory();
     
@@ -33,14 +33,14 @@ const Home = () => {
             console.log('status', status);
 
             if (status === 200) {
-
-                auth.setToken(data.token);
-                auth.setUser({ uid: data.uid, name: data.name });
-           
+                console.log(data.token);
+                // auth.setToken(data);
+                // auth.setUser({ uid: data.uid, name: data.name });
+                history.push("/Usuarios");
 
             } else if (status === 201) {
                 notie.alert({ text: data.msg, type: 'success', time: 5 });
-                history.push("/Usuarios");
+                
             }
             
             

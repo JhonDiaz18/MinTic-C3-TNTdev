@@ -75,7 +75,7 @@ const Home = () => {
                 <center>
                     <GoogleLogin
                         clientId='737691121751-1ukdm2td5rrivg53cblsg893ppk6vcfl.apps.googleusercontent.com'
-                        buttonText="Iniciar Sesión"
+                        buttonText="Sign in with Google"
                         onSuccess={responseGoogle}
                         onFailure={responseGoogle}
                         cookiePolicy={'single_host_origin'}

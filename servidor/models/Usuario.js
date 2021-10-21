@@ -9,8 +9,6 @@ const UsuarioSchema = Schema({
     email: {
         type: String,
         required: true,
-        //** El unique, es como la llave primaria en tablas relacionales
-        // NO SE PUEDE REPETIR */
         unique: true
     },
 

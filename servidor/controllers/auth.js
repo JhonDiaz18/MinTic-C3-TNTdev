@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const Usuario = require('../models/Usuario');
 const Rol = require('../models/Rol');
 const { generarJWT } = require('../helpers/jwt');
+//
+//const history = require ('useHistory')
 
 const crearUsuario = async (req, resp = response) => {
 
@@ -51,9 +53,9 @@ const loginUsuario = async (req, resp = response) => {
     try {
 
         /**Confirmar email */
-        let usuario = await Usuario.findOne({ email }); 
-        
-        if(!usuario) {
+        let usuario = await Usuario.findOne({ email });
+
+        if (!usuario) {
             resp.status(400).json({
                 ok: true,
                 msg: 'Usuario o contraseña erradas'
@@ -64,7 +66,7 @@ const loginUsuario = async (req, resp = response) => {
 
         const validPassword = bcrypt.compareSync(password, usuario.password);
 
-        if(!validPassword) {
+        if (!validPassword) {
             resp.status(400).json({
                 ok: true,
                 msg: 'Usuario o contraseña erradas'
@@ -81,14 +83,14 @@ const loginUsuario = async (req, resp = response) => {
             name: usuario.name,
             token
         });
-        
+
     } catch (error) {
         console.log(error)
         resp.status(500).json({
             ok: false,
             msg: 'error al autenticar',
         });
-    }    
+    }
 }
 
 const revalidarToken = async (req, resp = response) => {
@@ -108,20 +110,24 @@ const revalidarToken = async (req, resp = response) => {
 
 
 const googleLogin = async (req, resp = response) => {
+    //
+    // const location = useLocation();
+    // const history = useHistory();
+    //
 
-    const {uid: idToken, name, email} = req;
+    const { uid: idToken, name, email } = req;
 
     try {
         //** .populate trae los datos de esa llave */
         let usuario = await Usuario
-        .findOne({
-            email, 
-            idToken
-        })
-        .populate('rol');
+            .findOne({
+                email,
+                idToken
+            })
+            .populate('rol');
 
-        if(usuario) {
-            if(usuario.rol.name==='Indefinido'){
+        if (usuario) {
+            if (usuario.rol.name === 'Indefinido') {
                 resp.status(401).json({
                     ok: false,
                     msg: 'Usuario no autorizado por el admin'
@@ -136,7 +142,8 @@ const googleLogin = async (req, resp = response) => {
                     token
                 });
             }
-        } else{
+        }
+        else {
             usuario = new Usuario({
                 name,
                 email,
@@ -145,22 +152,28 @@ const googleLogin = async (req, resp = response) => {
             });
 
             const newUser = await usuario.save();
+
             resp.status(201).json({
                 ok: true,
-                msg: 'Usuario creado con exito',
+                msg: 'Usuario creado con éxito',
                 uid: newUser.id,
                 name: newUser.name
             })
         }
-        
+
     } catch (error) {
-        
+        console.log(error)
+        resp.status(500).json({
+            ok: false,
+            msg: 'error al autenticar',
+        });
     }
 
-    resp.json({
-        ok: true,
-        msg: "Google login exitoso"
-    });
+    // resp.json({
+    //     ok: true,
+    //     msg: "Google login exitoso"
+    // });
+
 }
 
 module.exports = {

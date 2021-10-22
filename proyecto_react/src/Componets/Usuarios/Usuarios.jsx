@@ -1,11 +1,10 @@
 import './Usuarios.css';
 import React, { useEffect, useState } from 'react';
-//import React, { useEffect } from 'react';
 import Header from '../Encabezado/Header';
 import axios from 'axios';
 import notie from 'notie';
 import 'notie/dist/notie.css';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 
 
 
@@ -14,15 +13,15 @@ const ListarUsuarios = () => {
     //CONSTANTES
     const constants = {
         'pathApi': 'http://localhost:4000/api',
-        'listarProductos': '/usuarios/listar'
+        'listarUsuarios': '/usuarios/listar'
     }
     //SERVICE
-    const listarProductos = () => {
+    const listarUsuarios = () => {
 
         try {
             return axios({
                 method: 'GET',
-                url: `${process.env.React_App_API_Url}${constants.listarProductos}`,
+                url: `${process.env.React_App_API_Url}${constants.listarUsuarios}`,
                 // headers: {
                 //     'Authorization': `Bearer ${token}`
                 // }
@@ -32,15 +31,13 @@ const ListarUsuarios = () => {
         }
     }
 
+    const [usuarios, setUsuarios] = useState([])
 
-
-    const [productos, setProductos] = useState([])
-
-    const getProductos = async () => {
+    const getUsuarios = async () => {
         try {
-            const { data } = await listarProductos();
-            setProductos(data.usuarios);
-            console.log(productos)
+            const { data } = await listarUsuarios();
+            setUsuarios(data.usuarios);
+            //console.log(productos)
 
         } catch ({ response: error }) {
 
@@ -53,13 +50,39 @@ const ListarUsuarios = () => {
             // } else {
             //     notie.alert({ text: error.data.msg, type: 'error', time: 3 });
             // }
-
-
         }
+    }
+    
+
+    const cambioRol = async () => {
+        notie.select({
+            text: 'Seleccione el nuevo Rol a actualizar:',
+            cancelText: 'Close',
+            cancelCallback: function () {
+                notie.alert({ type: 5, text: 'Cancel!' })
+            },
+            choices: [
+                {
+                    type: 2,
+                    text: '1. Administrador',
+                    handler: function () {
+                        notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
+                        //
+                    }
+                },
+                {
+                    type: 2,
+                    text: '2. Vendedor',
+                    handler: function () {
+                        notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
+                    }
+                },
+            ]
+        })
     }
 
     useEffect(() => {
-        getProductos();
+        getUsuarios();
     }, []);
 
 
@@ -86,21 +109,19 @@ const ListarUsuarios = () => {
 
                 <tbody>
                     {
-                        productos.map((producto, index) => (
-                            <tr key={producto._id}>
+                        usuarios.map((usuarios, index) => (
+                            <tr key={usuarios._id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{producto.name}</td>
-                                <td>{producto.email}</td>
-                                <td>{producto.rol.name}</td>
-                                <td><button className="button1" onClick={getProductos} >Actualizar</button></td>
+                                <td>{usuarios.name}</td>
+                                <td>{usuarios.email}</td>
+                                <td>{usuarios.rol.name}</td>
+                                <td><button className="button1" onClick={cambioRol} >Actualizar</button></td>
                             </tr>
                         ))
                     }
                 </tbody>
-
-            </table></>
-
-        //
+            </table>
+        </>
     );
 }
 

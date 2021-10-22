@@ -110,14 +110,11 @@ const revalidarToken = async (req, resp = response) => {
 
 
 const googleLogin = async (req, resp = response) => {
-    //
-    // const location = useLocation();
-    // const history = useHistory();
-    //
-
+    
     const { uid: idToken, name, email } = req;
 
     try {
+
         //** .populate trae los datos de esa llave */
         let usuario = await Usuario
             .findOne({
@@ -126,11 +123,11 @@ const googleLogin = async (req, resp = response) => {
             })
             .populate('rol');
 
-        if (usuario) {
+        if (usuario) {           
             if (usuario.rol.name === 'Indefinido') {
                 resp.status(401).json({
                     ok: false,
-                    msg: 'Usuario no autorizado por el admin'
+                    msg: 'error ...'
                 });
             } else {
                 const token = await generarJWT(usuario.id, usuario.name);
@@ -142,6 +139,12 @@ const googleLogin = async (req, resp = response) => {
                     token
                 });
             }
+            //linea nueva 
+            return resp.status(400).json({
+                ok: false,
+                msg: 'Ya existe un usuario registrado con ese email'
+            });
+            //fin linea nueva
         }
         else {
             usuario = new Usuario({
@@ -165,7 +168,7 @@ const googleLogin = async (req, resp = response) => {
         console.log(error)
         resp.status(500).json({
             ok: false,
-            msg: 'error al autenticar',
+            msg: 'Usuario no autorizado por el admin',
         });
     }
 

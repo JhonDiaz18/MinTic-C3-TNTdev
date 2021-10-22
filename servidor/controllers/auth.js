@@ -123,11 +123,21 @@ const googleLogin = async (req, resp = response) => {
             })
             .populate('rol');
 
-        if (usuario) {           
-            if (usuario.rol.name === 'Indefinido') {
+        if (usuario) {  
+            //cambio laura usuario.rol.name         
+            if (usuario.rol === 'Indefinido') {
                 resp.status(401).json({
                     ok: false,
-                    msg: 'error ...'
+                    msg: 'Usuario no autorizado por el admin'
+                });
+            } else if (usuario.rol === 'Administrador') {
+                const token = await generarJWT(usuario.id, usuario.name);
+                resp.json({
+                    ok: true,
+                    msg: 'Ok',
+                    uid: usuario.id,
+                    name: usuario.name,
+                    token
                 });
             } else {
                 const token = await generarJWT(usuario.id, usuario.name);
@@ -168,7 +178,7 @@ const googleLogin = async (req, resp = response) => {
         console.log(error)
         resp.status(500).json({
             ok: false,
-            msg: 'Usuario no autorizado por el admin',
+            msg: 'error',
         });
     }
 

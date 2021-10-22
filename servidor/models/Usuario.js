@@ -18,11 +18,12 @@ const UsuarioSchema = Schema({
     },
 
     rol: {
-        type: Schema.Types.ObjectId,
-        ref: 'Rol',
+        // type: Schema.Types.ObjectId,
+        // ref: 'Rol',
+        type: String,
         required: true,
         //** ID del rol de "Indefinido" (sacado directamente de la base de datos) */
-        default: '616ae58281481faff2532920'
+        default: 'Indefinido'
     },
 
     idToken: {

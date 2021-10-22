@@ -50,38 +50,6 @@ const Productos_2 = () => {
                     </td>
                     <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
                 </tr>
-                <tr>
-                    <td>ID product</td>
-                    <td>Description</td>
-                    <td>$0.000</td>
-                    <td>No Disponible
-                    </td>
-                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>ID product</td>
-                    <td>Description</td>
-                    <td>$0.000</td>
-                    <td>Disponible
-                    </td>
-                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>ID product</td>
-                    <td>Description</td>
-                    <td>$0.000</td>
-                    <td>Disponible
-                    </td>
-                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>ID product</td>
-                    <td>Description</td>
-                    <td>$0.000</td>
-                    <td>No Disponible
-                    </td>
-                    <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
-                </tr>
             </table>
         </>
         //

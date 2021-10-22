@@ -2,13 +2,12 @@ import './Productos_2.css';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Encabezado/Header';
-//import Pagination from 'react-bootstrap/Pagination'
-//import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
-import notie from 'notie';
 import 'notie/dist/notie.css';
 import axios from 'axios';
+//import Swal from 'sweetalert2';
+//import { Table, Button, Container, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "reactstrap";
 
 const Productos_2 = () => {
 
@@ -43,10 +42,85 @@ const Productos_2 = () => {
         }
     }
 
-    async function deleteProduct () {
-        await axios.delete(`${process.env.React_App_API_Url}${constants.deleteProduct}${productos.name}`);
+    // const mostrarModalActualizar = (dato) => {
+    //     this.setState({
+    //         form: dato,
+    //         modalActualizar: true,
+    //     });
+    // };
 
-    }
+    // const cerrarModalActualizar = () => {
+    //     this.setState({ modalActualizar: false });
+    // };
+
+    // const mostrarModalInsertar = () => {
+    //     this.setState({
+    //         modalInsertar: true,
+    //     });
+    // };
+
+    // const cerrarModalInsertar = () => {
+    //     this.setState({ modalInsertar: false });
+    // };
+
+    // const eliminar = (dato) => {
+    //     var opcion = window.confirm("Estás Seguro que deseas Eliminar el elemento ");
+    //     if (opcion == true) {
+    //       var contador = 0;
+    //       var arreglo = this.state.data;
+    //       arreglo.map((registro) => {
+    //         if (dato.id == registro.id) {
+    //           arreglo.splice(contador, 1);
+    //         }
+    //         contador++;
+    //       });
+    //       this.setState({ data: arreglo, modalActualizar: false });
+    //     }
+    //   };
+
+    //   const handleChange = (e) => {
+    //     this.setState({
+    //       form: {
+    //         ...this.state.form,
+    //         [e.target.name]: e.target.value,
+    //       },
+    //     });
+    //   };
+
+    // function deleteRow(btn) {
+    //     var row = btn.parentNode.parentNode;
+    //     row.parentNode.removeChild(row);
+    //   }
+    // const handleDelete = (id) => {
+
+    //     console.log('id', id);
+
+    //     Swal.fire({
+    //         title: 'Eliminar Producto',
+    //         text: "¿Esta seguro que desea eliminar el producto?",
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Si, eliminar',
+    //         cancelButtonText: 'Cancelar'
+    //     }).then((result) => {
+
+    //         console.log(result);
+
+    //         if (result.value) {
+    //             Swal.fire(
+    //                 'Deleted!',
+    //                 'Your file has been deleted.',
+    //                 'success'
+    //             )
+    //         }
+    //     })
+    // }
+
+    // async function deleteProduct () {
+    //     await axios.delete(`${process.env.React_App_API_Url}${constants.deleteProduct}${productos.name}`);
+
+    // }
 
     // const deleteProduct = async () => {
     //     try {
@@ -65,6 +139,9 @@ const Productos_2 = () => {
     // function eliminarFila(index) {
     //     $("#fila" + index).remove();
     // }
+
+
+
 
     useEffect(() => {
         getProducto();
@@ -113,9 +190,8 @@ const Productos_2 = () => {
                                 <td>{productos.name}</td>
                                 <td>US ${productos.value_product}</td>
                                 <td>{productos.state_product}</td>
-
-                                <td><button className="buttonEditar" >Edit</button>
-                                    <button className="buttonEliminar" onClick={deleteProduct}>Delete</button></td>
+                                <td><button className="buttonEditar"  >Edit</button>
+                                    <button className="buttonEliminar" >Delete</button></td>
                             </tr>
                         ))
                     }

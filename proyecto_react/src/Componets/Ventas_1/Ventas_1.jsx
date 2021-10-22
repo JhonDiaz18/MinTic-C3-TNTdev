@@ -19,16 +19,17 @@ const Ventas_1 = () => {
                 <div id="cabeza">
                     <label>Cliente</label>
                     <input type="text" name="Nombre de Cliente" id="cliente" />
-                    <label>Responsable</label>
+                    <label>Vendedor</label>
                     <input type="text" name="Responsable" id="responsable" readonly />
                     <label>Fecha</label>
                     <input type="date" name="Fecha" id="fecha" readonly />
-                    <label>ID Cliente</label>
+                    <label>Doc. Cliente</label>
                     <input type="text" name="ID de Cliente" id="idcliente" />
                     <label>ID de Venta</label>
                     <input type="text" name="ID de Venta" id="idventa" />
                 </div>
                 <hr />
+                <center>
                 <table className = "tableVentas1">
                     <tr>
                         <th>ID de Producto</th>
@@ -39,14 +40,15 @@ const Ventas_1 = () => {
                     </tr>
                     <tr>
                         <td><input type="text" name="ID de producto" id="idproducto"></input></td>
-                        <td><input type="text" name="Descripcion" id="descripcion" readonly></input></td>
+                        <td type="text" name="Descripcion" id="descripcion">-</td>
                         <td><input type="text" name="Cantidad" id="cantidad"></input></td>
-                        <td><input type="text" name="Precio Unitario" id="unitvalue" readonly></input></td>
+                        <td type="text" name="Precio Unitario" id="unitvalue">-</td>
                         <td><input type="text" name="Precio Total" id="totalprice" readonly></input></td>
-                        <td><button className = "buttonVentas1">+</button></td>
-                        <td><button className = "buttonVentas1">-</button></td>
+                        {/* <td><button className = "buttonVentas1">+</button></td>
+                        <td><button className = "buttonVentas1">-</button></td> */}
                     </tr>
                 </table>
+                </center>
                 <div id="pie">
                     <label>Estado</label>
                     <select name="Estado" id="estado">
@@ -54,8 +56,8 @@ const Ventas_1 = () => {
                         <option value="1">Entregada</option>
                         <option value="2">Cancelada</option>
                     </select>
-                    <label id="pt">Total</label>
-                    <td><input type="text" name="Precio Total venta" id="vtotalprice" readonly></input></td>
+                    {/* <label id="pt">Total</label>
+                    <td><input type="text" name="Precio Total venta" id="vtotalprice" readonly></input></td> */}
                 </div>
                 <hr />
                 <center><button className="buttonRegistrar">Guardar</button></center>

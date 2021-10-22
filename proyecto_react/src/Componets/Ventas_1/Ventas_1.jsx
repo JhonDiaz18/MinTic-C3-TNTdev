@@ -1,32 +1,73 @@
 import './Ventas_1.css';
-import React from 'react';
 import Header from '../Encabezado/Header';
+import M from 'materialize-css';
 
-const Ventas_1 = () => {
-    //Funciones
+import React, { Component } from 'react';
+
+class Ventas_1 extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+        client: '',
+        id_client: '',
+        id_sale: '',
+        date: '',
+        state_sale:'En proceso'
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.addTask = this.addTask.bind(this);
+  }
 
 
-    //    
-    return (  
-        //Codigo HTML
+  addTask(e) {
+      fetch('http://localhost:4000/api/ventas', {
+        method: 'POST',
+        body: JSON.stringify(this.state
+        ),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })    
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            M.toast({html: 'Task Updated'});
+            this.setState({client: '', id_client: '', id_sale: '', date: '', state_sale:'En proceso' });
+        //   this.fetchTasks();
+        })
+        e.preventDefault();
+  }
 
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
         <>
             <Header />
             <hr />
+            <form onSubmit= {this.addTask}>
             <center>
                 <h2>Registro de Ventas</h2>
             </center><div id="cuerpo">
+                
                 <div id="cabeza">
                     <label>Cliente</label>
-                    <input type="text" name="Nombre de Cliente" id="cliente" />
+                    <input type="text" name="client" id="cliente" onChange = {this.handleChange} value ={this.state.client}/>
                     <label>Vendedor</label>
                     <input type="text" name="Responsable" id="responsable" readonly />
                     <label>Fecha</label>
-                    <input type="date" name="Fecha" id="fecha" readonly />
+                    <input type="date" name="date" id="fecha" readonly onChange = {this.handleChange} value ={this.state.date}/>
                     <label>Doc. Cliente</label>
-                    <input type="text" name="ID de Cliente" id="idcliente" />
+                    <input type="text" name="id_client" id="idcliente" onChange = {this.handleChange} value ={this.state.id_client}/>
                     <label>ID de Venta</label>
-                    <input type="text" name="ID de Venta" id="idventa" />
+                    <input type="text" name="id_sale" id="idventa" onChange = {this.handleChange} value ={this.state.id_sale}/>
                 </div>
                 <hr />
                 <center>
@@ -44,27 +85,24 @@ const Ventas_1 = () => {
                         <td><input type="text" name="Cantidad" id="cantidad"></input></td>
                         <td type="text" name="Precio Unitario" id="unitvalue">-</td>
                         <td><input type="text" name="Precio Total" id="totalprice" readonly></input></td>
-                        {/* <td><button className = "buttonVentas1">+</button></td>
-                        <td><button className = "buttonVentas1">-</button></td> */}
                     </tr>
                 </table>
                 </center>
                 <div id="pie">
                     <label>Estado</label>
-                    <select name="Estado" id="estado">
-                        <option value="0">En Progreso</option>
-                        <option value="1">Entregada</option>
-                        <option value="2">Cancelada</option>
+                    <select name="state_sale" id="estado" onChange = {this.handleChange} value ={this.state.state_sale}>
+                        <option value="En Progreso">En Progreso</option>
+                        <option value="Entregada">Entregada</option>
+                        <option value="Cancelada">Cancelada</option>
                     </select>
-                    {/* <label id="pt">Total</label>
-                    <td><input type="text" name="Precio Total venta" id="vtotalprice" readonly></input></td> */}
                 </div>
                 <hr />
                 <center><button className="buttonRegistrar">Guardar</button></center>
-            </div></>
-
-        //
-    );
+            </div>
+            </form>
+            </>
+    )
 }
- 
+}
+
 export default Ventas_1;

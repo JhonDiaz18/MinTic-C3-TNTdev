@@ -1,10 +1,10 @@
 import './Ventas_2.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
-import Table from 'react-bootstrap/Table';
+//import Table from 'react-bootstrap/Table';
 import Header from '../Encabezado/Header';
-import Pagination from 'react-bootstrap/Pagination'
-import Button from 'react-bootstrap/Button';
+//import Pagination from 'react-bootstrap/Pagination'
+//import Button from 'react-bootstrap/Button';
 import { useHistory } from 'react-router-dom'
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'

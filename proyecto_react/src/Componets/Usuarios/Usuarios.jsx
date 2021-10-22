@@ -37,49 +37,51 @@ const ListarUsuarios = () => {
         try {
             const { data } = await listarUsuarios();
             setUsuarios(data.usuarios);
-            //console.log(productos)
-
+         
         } catch ({ response: error }) {
 
             console.log(error);
-            // if (error.status === 401) {
-            //     setTimeout(() => {
-            //         //auth.logout();
-            //     }, 3000);
-            //     notie.alert({ text: error.data.msg, type: 'warning', time: 3 });
-            // } else {
-            //     notie.alert({ text: error.data.msg, type: 'error', time: 3 });
-            // }
+            if (error.status === 401) {
+                setTimeout(() => {
+                   
+                }, 3000);
+                notie.alert({ text: error.data.msg, type: 'warning', time: 3 });
+            } else {
+                notie.alert({ text: error.data.msg, type: 'error', time: 3 });
+            }
         }
     }
     
-
     const cambioRol = async () => {
-        notie.select({
-            text: 'Seleccione el nuevo Rol a actualizar:',
-            cancelText: 'Close',
-            cancelCallback: function () {
-                notie.alert({ type: 5, text: 'Cancel!' })
-            },
-            choices: [
-                {
-                    type: 2,
-                    text: '1. Administrador',
-                    handler: function () {
-                        notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
-                        //
-                    }
-                },
-                {
-                    type: 2,
-                    text: '2. Vendedor',
-                    handler: function () {
-                        notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
-                    }
-                },
-            ]
-        })
+        usuarios.rol = 'Administrador';
     }
+    // const cambioRol = async () => {
+    //     notie.select({
+    //         text: 'Seleccione el nuevo Rol a actualizar:',
+    //         cancelText: 'Close',
+    //         cancelCallback: function () {
+    //             notie.alert({ type: 5, text: 'Cancel!' })
+    //         },
+    //         choices: [
+    //             {
+    //                 type: 2,
+    //                 text: '1. Administrador',
+    //                 handler: function () {
+    //                     notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
+    //                     usuarios.rol = 'Administrador';
+    //                 }
+                    
+    //             },
+    //             {
+    //                 type: 2,
+    //                 text: '2. Vendedor',
+    //                 handler: function () {
+    //                     notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
+    //                 }
+    //             },
+    //         ]
+    //     })
+    // }
 
     useEffect(() => {
         getUsuarios();
@@ -114,7 +116,7 @@ const ListarUsuarios = () => {
                                 <th scope="row">{index + 1}</th>
                                 <td>{usuarios.name}</td>
                                 <td>{usuarios.email}</td>
-                                <td>{usuarios.rol.name}</td>
+                                <td>{usuarios.rol}</td>
                                 <td><button className="button1" onClick={cambioRol} >Actualizar</button></td>
                             </tr>
                         ))

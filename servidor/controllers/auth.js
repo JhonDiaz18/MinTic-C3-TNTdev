@@ -110,11 +110,7 @@ const revalidarToken = async (req, resp = response) => {
 
 
 const googleLogin = async (req, resp = response) => {
-    //
-    // const location = useLocation();
-    // const history = useHistory();
-    //
-
+    
     const { uid: idToken, name, email } = req;
 
     try {

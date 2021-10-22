@@ -61,9 +61,6 @@ const crearProducto = async (req, resp = response) => {
     }
 }
 
-
-
-
 /**actualizarProducto */
 
 const actualizarProducto = async (req, resp = response) => {

@@ -15,7 +15,8 @@ const Productos_2 = () => {
     //CONSTANTES
     const constants = {
         'pathApi': 'http://localhost:4000/api',
-        'listarProductos': '/productos'
+        'listarProductos': '/productos',
+        'deleteProduct': '/productos?name='
     }
     //SERVICE
     const listarProductos = () => {
@@ -24,9 +25,6 @@ const Productos_2 = () => {
             return axios({
                 method: 'GET',
                 url: `${process.env.React_App_API_Url}${constants.listarProductos}`,
-                // headers: {
-                //     'Authorization': `Bearer ${token}`
-                // }
             });
         } catch (error) {
             throw error.status;
@@ -41,45 +39,31 @@ const Productos_2 = () => {
             setProducto(data.productos);
 
         } catch ({ response: error }) {
-
             console.log(error);
-            // if (error.status === 401) {
-            //     setTimeout(() => {
-            //         //auth.logout();
-            //     }, 3000);
-            //     notie.alert({ text: error.data.msg, type: 'warning', time: 3 });
-            // } else {
-            //     notie.alert({ text: error.data.msg, type: 'error', time: 3 });
-            // }
         }
     }
-    
 
-    // const cambioRol = async () => {
-    //     notie.select({
-    //         text: 'Seleccione el nuevo Rol a actualizar:',
-    //         cancelText: 'Close',
-    //         cancelCallback: function () {
-    //             notie.alert({ type: 5, text: 'Cancel!' })
-    //         },
-    //         choices: [
-    //             {
-    //                 type: 2,
-    //                 text: '1. Administrador',
-    //                 handler: function () {
-    //                     notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
-    //                     //
-    //                 }
-    //             },
-    //             {
-    //                 type: 2,
-    //                 text: '2. Vendedor',
-    //                 handler: function () {
-    //                     notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
-    //                 }
-    //             },
-    //         ]
-    //     })
+    async function deleteProduct () {
+        await axios.delete(`${process.env.React_App_API_Url}${constants.deleteProduct}${productos.name}`);
+
+    }
+
+    // const deleteProduct = async () => {
+    //     try {
+    //         return axios({
+    //             method: 'DELETE',
+    //             url: `${process.env.React_App_API_Url}${constants.deleteProduct}`,
+    //             params: {
+    //                 'name': `${productos.name}`
+    //             }
+    //         });
+    //     } catch (error) {
+    //         throw error.status;
+    //     }
+    // }
+
+    // function eliminarFila(index) {
+    //     $("#fila" + index).remove();
     // }
 
     useEffect(() => {
@@ -111,7 +95,7 @@ const Productos_2 = () => {
             <table className="tableProductos2">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
+                        <th scope="col">#</th>
                         <th scope="col">ID</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Precio Unitario</th>
@@ -123,16 +107,17 @@ const Productos_2 = () => {
                 <tbody>
                     {
                         productos.map((productos, index) => (
-                        <tr key={productos._id}>
-                            <th scope="row">{index + 1}</th>
-                            <td>{productos.id_product}</td>
-                            <td>{productos.name}</td>
-                            <td>US ${productos.value_product}</td>
-                            <td>{productos.state_product}</td>
-                        
-                            <td><button className="buttonEditar">Edit</button><button className="buttonEliminar">Delete</button></td>
-                        </tr>
-                         ))
+                            <tr key={productos._id}>
+                                <th scope="row">{index + 1}</th>
+                                <td>{productos.id_product}</td>
+                                <td>{productos.name}</td>
+                                <td>US ${productos.value_product}</td>
+                                <td>{productos.state_product}</td>
+
+                                <td><button className="buttonEditar" >Edit</button>
+                                    <button className="buttonEliminar" onClick={deleteProduct}>Delete</button></td>
+                            </tr>
+                        ))
                     }
                 </tbody>
             </table>

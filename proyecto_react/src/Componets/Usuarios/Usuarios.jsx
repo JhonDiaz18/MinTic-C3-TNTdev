@@ -13,8 +13,10 @@ const ListarUsuarios = () => {
     //CONSTANTES
     const constants = {
         'pathApi': 'http://localhost:4000/api',
-        'listarUsuarios': '/usuarios/listar'
+        'listarUsuarios': '/usuarios/listar',
+        'updateUsuer':'/usuarios/actualizar/'
     }
+    
     //SERVICE
     const listarUsuarios = () => {
 
@@ -27,6 +29,25 @@ const ListarUsuarios = () => {
                 // }
             });
         } catch (error) {
+            throw error.status;
+        }
+    }
+
+    const uptUsuarios = (ids) => {
+
+        
+        try {
+            return axios({
+                method: 'PUT',
+                url: `${process.env.React_App_API_Url}${constants.updateUsuer}${ids}`,
+                params:{
+                    rol: "venderdjfjcjncfjoor"
+                }
+                
+                // }
+            });
+        } catch (error) {
+            console.log(error)
             throw error.status;
         }
     }
@@ -52,36 +73,35 @@ const ListarUsuarios = () => {
         }
     }
     
-    const cambioRol = async () => {
-        usuarios.rol = 'Administrador';
-    }
-    // const cambioRol = async () => {
-    //     notie.select({
-    //         text: 'Seleccione el nuevo Rol a actualizar:',
-    //         cancelText: 'Close',
-    //         cancelCallback: function () {
-    //             notie.alert({ type: 5, text: 'Cancel!' })
-    //         },
-    //         choices: [
-    //             {
-    //                 type: 2,
-    //                 text: '1. Administrador',
-    //                 handler: function () {
-    //                     notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
-    //                     usuarios.rol = 'Administrador';
-    //                 }
+    let cambioRol = async (data) => {
+        console.log(data._id)
+        notie.select({
+            text: 'Seleccione el nuevo Rol a actualizar:',
+            cancelText: 'Close',
+            cancelCallback: function () {
+                notie.alert({ type: 5, text: 'Cancel!' })
+            },
+            choices: [
+                {
+                    type: 2,
+                    text: '1. Administrador',
+                    handler: function () {
+                        uptUsuarios(data._id)
+                        notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
+                        
+                    }
                     
-    //             },
-    //             {
-    //                 type: 2,
-    //                 text: '2. Vendedor',
-    //                 handler: function () {
-    //                     notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
-    //                 }
-    //             },
-    //         ]
-    //     })
-    // }
+                },
+                {
+                    type: 2,
+                    text: '2. Vendedor',
+                    handler: function () {
+                        notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
+                    }
+                },
+            ]
+        })
+    }
 
     useEffect(() => {
         getUsuarios();
@@ -117,7 +137,7 @@ const ListarUsuarios = () => {
                                 <td>{usuarios.name}</td>
                                 <td>{usuarios.email}</td>
                                 <td>{usuarios.rol}</td>
-                                <td><button className="button1" onClick={cambioRol} >Actualizar</button></td>
+                                <td><button className="button1" onClick={ () => cambioRol(usuarios)  }>Actualizar</button></td>
                             </tr>
                         ))
                     }

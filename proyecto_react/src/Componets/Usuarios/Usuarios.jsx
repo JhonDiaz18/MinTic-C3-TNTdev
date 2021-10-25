@@ -17,34 +17,40 @@ const ListarUsuarios = () => {
         'updateUsuer':'/usuarios/actualizar/'
     }
     
-    //SERVICE
     const listarUsuarios = () => {
-
         try {
             return axios({
                 method: 'GET',
                 url: `${process.env.React_App_API_Url}${constants.listarUsuarios}`,
-                // headers: {
-                //     'Authorization': `Bearer ${token}`
-                // }
             });
         } catch (error) {
             throw error.status;
         }
     }
 
-    const uptUsuarios = (ids) => {
-
-        
+    const uptUsuariosA = (ids) => {
         try {
             return axios({
                 method: 'PUT',
                 url: `${process.env.React_App_API_Url}${constants.updateUsuer}${ids}`,
-                params:{
-                    rol: "venderdjfjcjncfjoor"
+                data:{
+                    rol: 'Administrador'
                 }
-                
-                // }
+            });
+        } catch (error) {
+            console.log(error)
+            throw error.status;
+        }
+    }
+
+    const uptUsuariosV = (ids) => {
+        try {
+            return axios({
+                method: 'PUT',
+                url: `${process.env.React_App_API_Url}${constants.updateUsuer}${ids}`,
+                data:{
+                    rol: 'Vendedor'
+                }
             });
         } catch (error) {
             console.log(error)
@@ -86,16 +92,16 @@ const ListarUsuarios = () => {
                     type: 2,
                     text: '1. Administrador',
                     handler: function () {
-                        uptUsuarios(data._id)
+                        uptUsuariosA(data._id)
                         notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
                         
                     }
-                    
                 },
                 {
                     type: 2,
                     text: '2. Vendedor',
                     handler: function () {
+                        uptUsuariosV(data._id)
                         notie.alert({ type: 1, text: 'Un nuevo Vendedor!!' })
                     }
                 },

@@ -1,7 +1,8 @@
 import './Productos_1.css';
 // import React from 'react';
 import Header from '../Encabezado/Header';
-import M from 'materialize-css';
+// import M from 'materialize-css';
+import notie from 'notie';
 
 import React, { Component } from 'react';
 
@@ -33,7 +34,8 @@ class Productos_1 extends Component {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            M.toast({html: 'Task Updated'});
+            // M.toast({html: 'Task Updated'});
+            notie.alert({ type: 'success', text: 'Producto creado Exitosamente!', time: 4 })
             this.setState({name: '', id_product: '', value_product: '', state_product: 'Disponible'});
         //   this.fetchTasks();
         })

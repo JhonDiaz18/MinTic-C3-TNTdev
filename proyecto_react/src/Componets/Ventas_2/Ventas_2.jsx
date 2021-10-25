@@ -13,13 +13,15 @@ import axios from 'axios';
 import notie from 'notie';
 import 'notie/dist/notie.css';
 
+
 const Ventas_2 = () => {
     //CONSTANTES
     const history = useHistory();
+    let a=0; //constante para el boton
     const constants = {
         'pathApi': 'http://localhost:4000/api',
-        'listarVentas': '/ventas?'
-
+        'listarVentas': '/ventas?',
+        'actualizarV' : '/ventas/'
     }
 
     //SERVICE
@@ -41,7 +43,7 @@ const Ventas_2 = () => {
         try {
             const { data } = await listarVentas();
             setVentas(data.itemV);
-            console.log(ventas);
+            //console.log(ventas);
 
         } catch ({ response: error }) {
 
@@ -49,16 +51,23 @@ const Ventas_2 = () => {
         }
     }
 
-
-    const editar =async () =>{
-        // console.log(v);
+    ///cositas
+    const buscarVenta = (id) => {
         try {
-            const { status, data } = await axios({
+            return axios({
                 method: 'GET',
-                url: `${process.env.React_App_API_Url}${constants.listarVentas}`,
+                url: `${process.env.React_App_API_Url}${constants.listarVentas}id_sale=${id}`,
             });
-            //console.log(data);
-            
+        } catch (error) {
+            throw error.status;
+        }
+    }
+
+
+    const editar = async (idd) =>{
+        try {
+            const { status, data } = await buscarVenta(idd)
+            console.log(data)
             console.log('status', status);
 
             if (status === 200) {
@@ -146,15 +155,14 @@ const Ventas_2 = () => {
                 </thead>
                 <tbody>
                     {
-                        ventas.map((ventas, index) => (
-                            <tr key={ventas._id}>
-                                <td>{ventas.id_sale}</td>
-                                <td>{ventas.client}</td>
-                                <td>{ventas.date}</td>
-                                <td>{ventas.__v}</td>
-                                <td>{ventas.state_sale}</td>
-                                <td><button className="button1" onClick={editar} >Actualizar</button>
-                                </td>
+                        ventas.map((venta, index) => (
+                            <tr key={venta.id_sale}>
+                                <td>{venta.id_sale}</td>
+                                <td>{venta.client}</td>
+                                <td>{venta.date}</td>
+                                <td>{venta.__v}</td>
+                                <td>{venta.state_sale}</td>
+                                <td><button className="button1" onClick={()=>{editar(venta.id_sale)}}>Editar</button></td>
                             </tr>
                         ))
                     }

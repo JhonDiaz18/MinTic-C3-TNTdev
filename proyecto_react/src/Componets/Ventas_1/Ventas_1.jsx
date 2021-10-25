@@ -1,6 +1,7 @@
 import './Ventas_1.css';
 import Header from '../Encabezado/Header';
-import M from 'materialize-css';
+// import M from 'materialize-css';
+import notie from 'notie';
 
 import React, { Component } from 'react';
 
@@ -33,7 +34,8 @@ class Ventas_1 extends Component {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            M.toast({html: 'Task Updated'});
+            notie.alert({ type: 'success', text: 'Venta creada Exitosamente!', time: 4 })
+            // M.toast({html: 'Task Updated'});
             this.setState({client: '', id_client: '', id_sale: '', date: '', state_sale:'En proceso' });
         //   this.fetchTasks();
         })
@@ -84,7 +86,7 @@ class Ventas_1 extends Component {
                         <td type="text" name="Descripcion" id="descripcion">-</td>
                         <td><input type="text" name="Cantidad" id="cantidad"></input></td>
                         <td type="text" name="Precio Unitario" id="unitvalue">-</td>
-                        <td><input type="text" name="Precio Total" id="totalprice" readonly></input></td>
+                        <td type="text" name="Precio Total" id="totalprice" readonly>0</td>
                     </tr>
                 </table>
                 </center>

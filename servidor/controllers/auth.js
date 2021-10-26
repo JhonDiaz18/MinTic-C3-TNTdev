@@ -110,7 +110,7 @@ const revalidarToken = async (req, resp = response) => {
 
 
 const googleLogin = async (req, resp = response) => {
-    
+
     const { uid: idToken, name, email } = req;
 
     try {
@@ -123,8 +123,9 @@ const googleLogin = async (req, resp = response) => {
             })
             .populate('rol');
 
-        if (usuario) {  
-            //cambio laura usuario.rol.name         
+        if (usuario) {
+            //cambio laura usuario.rol.name   
+            //console.log( usuario)      
             if (usuario.rol === 'Indefinido') {
                 resp.status(401).json({
                     ok: false,
@@ -137,6 +138,7 @@ const googleLogin = async (req, resp = response) => {
                     msg: 'Ok',
                     uid: usuario.id,
                     name: usuario.name,
+                    rol: usuario.rol,
                     token
                 });
             } else {
@@ -146,6 +148,7 @@ const googleLogin = async (req, resp = response) => {
                     msg: 'Ok',
                     uid: usuario.id,
                     name: usuario.name,
+                    //rol: usuario.rol,
                     token
                 });
             }
@@ -170,7 +173,8 @@ const googleLogin = async (req, resp = response) => {
                 ok: true,
                 msg: 'Usuario creado con éxito',
                 uid: newUser.id,
-                name: newUser.name
+                name: newUser.name,
+                rol: usuario.rol
             })
         }
 

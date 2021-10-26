@@ -1,7 +1,13 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 import './Header.css'
+import contextValue from '../../Providers/AuthProvider'
 
 const Header = () => {
+    const auth = useAuth();
+    const prueba = async (resp) => {
+        auth.logout()
+    }
     return (
         <header className ="header">
             <div className ="container logo-nav-container">
@@ -23,7 +29,7 @@ const Header = () => {
                         </li>
 
                         <li><a href="../Usuarios">Usuarios</a></li>
-                        <button className ="logOut"><a href="../">Log Out</a></button>
+                        <button className ="logOut" onClick={prueba}><a>Log Out</a></button>
                     </ul>
                     </nav>
             </div>

@@ -94,7 +94,6 @@ const ListarUsuarios = () => {
                     handler: function () {
                         uptUsuariosA(data._id)
                         notie.alert({ type: 1, text: 'Un nuevo administrador!!' })
-                        
                     }
                 },
                 {

@@ -5,8 +5,15 @@ const {check} = require('express-validator');
 const {validarCampos} = require('../middleware/validar-campos');
 const router = Router();
 //router.use(validarJWT);
+const Task = require('../models/Producto');
+
 
 router.get('/',getProductos);
+
+router.get('/:id', async (req, res) => {
+    const task = await Task.findById(req.params.id);
+    res.json(task);
+  });
 
 router.post(
     '/', 

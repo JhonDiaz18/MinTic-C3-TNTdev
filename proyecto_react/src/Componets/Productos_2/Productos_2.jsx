@@ -6,12 +6,15 @@ import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
 import 'notie/dist/notie.css';
 import axios from 'axios';
+import notie from 'notie';
+import { useHistory } from 'react-router-dom'
+import Productos_1 from '../Productos_1/Productos_1';
 //import Swal from 'sweetalert2';
 //import { Table, Button, Container, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "reactstrap";
 
 const Productos_2 = () => {
-
     //CONSTANTES
+    const history = useHistory();
     const constants = {
         'pathApi': 'http://localhost:4000/api',
         'listarProductos': '/productos',
@@ -139,9 +142,33 @@ const Productos_2 = () => {
     // function eliminarFila(index) {
     //     $("#fila" + index).remove();
     // }
+    const reload = () => {
+        window.location.reload(true);
+    }
+
+    const deleteTask = (_id) => {
+        fetch(`http://localhost:4000/api/productos/${_id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => 
+            console.log(data),
+            reload(),
+            notie.alert({ type: 'success', text: 'Producto eliminado Exitosamente!', time: 4 })
+            )
+    }
 
 
-
+    const editTask = (_id) => {
+        history.push("Productos_1")
+        fetch(`http://localhost:4000/api/productos/${_id}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
 
     useEffect(() => {
         getProducto();
@@ -190,8 +217,8 @@ const Productos_2 = () => {
                                 <td>{productos.name}</td>
                                 <td>US ${productos.value_product}</td>
                                 <td>{productos.state_product}</td>
-                                <td><button className="buttonEditar"  >Edit</button>
-                                    <button className="buttonEliminar" >Delete</button></td>
+                                <td><button className="buttonEditar"  onClick={() => editTask(productos._id)}>Edit</button>
+                                    <button className="buttonEliminar" onClick={() => deleteTask(productos._id)}>Delete</button></td>
                             </tr>
                         ))
                     }

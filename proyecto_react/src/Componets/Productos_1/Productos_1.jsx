@@ -3,7 +3,7 @@ import './Productos_1.css';
 import Header from '../Encabezado/Header';
 // import M from 'materialize-css';
 import notie from 'notie';
-
+import Productos_2 from '../Productos_2/Productos_2';
 import React, { Component } from 'react';
 
 class Productos_1 extends Component {
@@ -19,7 +19,6 @@ class Productos_1 extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.addTask = this.addTask.bind(this);
   }
-
 
   addTask(e) {
       fetch('http://localhost:4000/api/productos', {
